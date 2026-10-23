@@ -85,7 +85,7 @@ img {
   display:flex;
   align-items:center;
   gap:28px;
-  font-size:12px;
+  font-size:15px;
   font-weight:600;
   color:#47554d
 }
@@ -1679,10 +1679,10 @@ h1 em,h2 em {
 
 /* Ramo Loco branding and separate cart */
 .brand-logo {
-  width:48px;
-  height:48px;
+  width:14%;
+  height:14%;
   object-fit:contain;
-  border-radius:50%;
+  border-radius:60%;
   margin-right:10px;
   vertical-align:middle
 }
@@ -1956,3 +1956,5 @@ html {
 
 /* Personalización del pedido */
 .extras-section{margin:28px 0;padding:22px;border:1px solid #e7dcd4;border-radius:14px;background:#fffaf7}.extras-section h3{margin:0 0 8px}.extras-description{margin-bottom:18px;color:#70665f}.extra-toggle{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid #eee1d8;cursor:pointer}.extra-toggle input{width:20px;height:20px;accent-color:#276e53}.extra-toggle span{display:flex;flex-direction:column;gap:4px}.extra-toggle small{color:#73665f}.extra-detail{margin:0 0 15px 34px}.extra-detail[hidden]{display:none}.extra-detail label{display:block;margin-bottom:8px;font-weight:600}.extra-detail textarea,.extra-detail select{display:block;width:100%;padding:12px;border:1px solid #d7c8bd;border-radius:9px;background:white;font:inherit}.cart-line img{width:86px;height:92px;object-fit:cover;border-radius:10px;flex-shrink:0}
+
+@media (max-width:760px) { .site-header { position:relative; z-index:1000; } .menu-toggle { cursor:pointer; position:relative; z-index:1002; min-width:44px; min-height:44px; } .nav.open { display:flex; z-index:1001; max-height:calc(100dvh - 74px); overflow-y:auto; } }
