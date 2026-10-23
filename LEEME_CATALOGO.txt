@@ -1,0 +1,4 @@
+Las 10 fotos ahora tienen botón Agregar al carrito.
+Las imágenes fueron ampliadas y mejoradas con ajustes de nitidez y contraste, sin inventar detalle fotográfico.
+Los últimos cuatro arreglos tienen precio pendiente de confirmar; se añaden al carrito sin precio inventado.
+Para ver el carrito completo, abrir carrito.html.

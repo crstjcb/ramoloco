@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Ramo Loco | Floristería
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <a class="brand" href="index.html">
+    <img alt="Logo Ramo Loco" class="brand-logo" loading="lazy" src="logo-ramo-loco.png"/>
+   <span>
+     Ramo
+     <b>
+      Loco
+     </b>
+     <small>
+      FLORES CON AMOR · GUATEMALA
+     </small>
+    </span>
+   </a>
+   <button aria-label="Abrir menú" class="menu-toggle" onclick="toggleMenu()">
+    ☰
+   </button>
+   <nav class="nav" id="nav">
+    <a href="index.html">
+     Inicio
+    </a>
+    <a href="envios.html">
+     Envíos
+    </a>
+    <a href="catalogo.html">
+     Catálogo
+    </a>
+    <a href="carrito.html">
+     Carrito
+     <span class="cart-nav-count" id="cartNavCount">
+      0
+     </span>
+    </a>
+    
+    <a href="nosotros.html">
+     Nosotros
+    </a>
+    <a class="active" href="contacto.html">
+     Contacto
+    </a>
+    <a class="nav-cta" href="carrito.html">
+     Ver carrito ↗
+    </a>
+   </nav>
+  </header>
+  <main>
+   <section class="page-hero">
+    <span class="eyebrow">
+     ESTAMOS PARA AYUDARTE
+    </span>
+    <h1>
+     Cuéntanos qué quieres
+     <em>
+      celebrar.
+     </em>
+    </h1>
+    <p>
+     Escríbenos para consultar disponibilidad, cotizar un arreglo o crear un diseño personalizado.
+    </p>
+    <div class="breadcrumbs">
+     <a href="index.html">
+      Inicio
+     </a>
+     / Contacto
+    </div>
+   </section>
+   <section class="contact-layout section-wrap">
+    <div class="contact-details">
+     <span class="eyebrow">
+      HABLEMOS
+     </span>
+     <h2>
+      Tu idea comienza aquí.
+     </h2>
+     <p class="muted">
+      Completa el formulario para preparar tu mensaje sin abrir WhatsApp.
+     </p>
+     <div class="contact-method">
+      <span>
+       ✆
+      </span>
+      <div>
+       <b>
+        WhatsApp
+       </b>
+       <p>
+        Atención personalizada para tus pedidos
+       </p>
+       <a href="https://www.instagram.com/ramo_locoo/" rel="noopener noreferrer" target="_blank">
+        +502 0000-0000 ↗
+       </a>
+      </div>
+     </div>
+     <div class="contact-method">
+      <span>
+       ◷
+      </span>
+      <div>
+       <b>
+        Horario de atención
+       </b>
+       <p>
+        Lunes a sábado · 8:00 a. m. – 10:00 p. m.
+       </p>
+       <small>
+        Horario referencial; confirma antes de visitarnos.
+       </small>
+      </div>
+     </div>
+     <div class="contact-method">
+      <span>
+       ⌖
+      </span>
+      <div>
+       <b>
+        Ubicación
+       </b>
+       <p>
+        Guatemala, Guatemala
+       </p>
+       <small>
+        Entrega y cobertura por confirmar según zona.
+       </small>
+      </div>
+     </div>
+    </div>
+    <form class="contact-form" onsubmit="sendWhatsApp(event)">
+     <h3>
+      Cuéntanos sobre tu pedido
+     </h3>
+     <p>
+      Los campos marcados con * son obligatorios.
+     </p>
+     <label for="name">
+      Tu nombre *
+     </label>
+     <input id="name" name="name" placeholder="¿Cómo te llamas?" required=""/>
+     <label for="phone">
+      Tu número de contacto
+     </label>
+     <input id="phone" name="phone" placeholder="Ej. 5555 5555" type="tel"/>
+     <label for="occasion">
+      ¿Para qué ocasión?
+     </label>
+     <select id="occasion" name="occasion">
+      <option>
+       Cumpleaños
+      </option>
+      <option>
+       Aniversario
+      </option>
+      <option>
+       Graduación
+      </option>
+      <option>
+       Agradecimiento
+      </option>
+      <option>
+       Condolencias
+      </option>
+      <option>
+       Solo porque sí
+      </option>
+      <option>
+       Otra ocasión
+      </option>
+     </select>
+     <label for="message">
+      Cuéntanos tu idea *
+     </label>
+     <textarea id="message" name="message" placeholder="Tipo de flores, colores, presupuesto o fecha deseada..." required="" rows="5"></textarea>
+     <button class="btn btn-primary btn-full" type="submit">
+      Preparar mensaje sin abrir WhatsApp ✓
+     </button>
+     <small class="form-note">
+      El mensaje se copiará. Para enviarlo realmente sin abrir WhatsApp hace falta integrar WhatsApp Business API.
+     </small>
+     <div aria-live="polite" class="confirmation-panel" hidden="" id="contactStatus">
+     </div>
+    </form>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="footer-main">
+    <a class="brand brand-footer" href="index.html">
+     <img alt="Logo Ramo Loco" class="brand-logo" loading="lazy" src="logo-ramo-loco.png"/>
+     <span>
+     Ramo
+     <b>
+      Loco
+     </b>
+     <small>
+      FLORES CON AMOR · GUATEMALA
+     </small>
+    </span>
+    </a>
+    <p>
+     Flores que expresan lo que las palabras no siempre pueden.
+    </p>
+    <div class="footer-links">
+     <a href="catalogo.html">
+      Catálogo
+     </a>
+     
+     <a href="envios.html">
+      Envíos
+     </a>
+     <a href="nosotros.html">
+      Nosotros
+     </a>
+     <a href="contacto.html">
+      Contacto
+     </a>
+     <a href="https://www.instagram.com/ramo_locoo/" rel="noopener noreferrer" target="_blank">
+      Instagram @ramo_locoo ↗
+     </a>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <span>
+     © 2026 Ramo Loco. Todos los derechos reservados.
+    </span>
+    <span>
+     Hecho con cuidado en Guatemala ♡
+    </span>
+   </div>
+  </footer>
+  <a class="whatsapp-float"
+   href="https://www.instagram.com/ramo_locoo/"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Visitar Instagram de Ramo Loco">
+
+  <svg xmlns="http://www.w3.org/2000/svg"
+       width="26"
+       height="26"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+
+    <rect x="2" y="2" width="20" height="20" rx="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+
+  </svg>
+</a>
+  <script src="main.js">
+  </script>
+  <script>
+   async function sendWhatsApp(e){e.preventDefault();const f=e.currentTarget;const data=new FormData(f);const name=(data.get('name')||'').toString();const phone=(data.get('phone')||'').toString();const occasion=(data.get('occasion')||'').toString();const message=(data.get('message')||'').toString();const text=`Hola Ramo Loco, soy ${name}.\nTeléfono: ${phone}\nOcasión: ${occasion}\nMensaje: ${message}`;const status=document.getElementById('contactStatus');let copied=false;try{await navigator.clipboard.writeText(text);copied=true;}catch(err){}status.replaceChildren();const title=document.createElement('h3');title.textContent=copied?'Mensaje copiado ✓':'Mensaje preparado';const p=document.createElement('p');p.textContent='No se abrió WhatsApp ni se envió el mensaje automáticamente. Puedes copiarlo y compartirlo:';const textarea=document.createElement('textarea');textarea.rows=5;textarea.readOnly=true;textarea.value=text;const btn=document.createElement('button');btn.type='button';btn.className='btn btn-primary';btn.textContent='Copiar mensaje';btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(text);btn.textContent='Copiado ✓';}catch(e){textarea.focus();textarea.select();}});status.append(title,p,textarea,btn);status.hidden=false;status.scrollIntoView({behavior:'smooth',block:'center'});}
+  </script>
+ </body>
+</html>
+

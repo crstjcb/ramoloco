@@ -1,0 +1,11 @@
+RAMO LOCO - SITIO WEB
+1. Extrae la carpeta completa.
+2. Abre index.html en el navegador. Para publicar, sube todos los archivos y carpetas manteniendo su estructura.
+3. El carrito tiene una página independiente: carrito.html. Los artículos se guardan en el navegador mediante localStorage.
+4. Instagram: https://www.instagram.com/ramo_locoo/
+5. Horario: lunes a sábado, 8:00 am a 10:00 pm.
+6. PAGOS: se añadió un enlace informativo a https://www.recurrente.com/. Esto NO es una integración de cobro. Para recibir pagos debes crear/configurar una cuenta de comercio en Recurrente y obtener el enlace de checkout o integrar su solución oficial siguiendo sus requisitos. No solicites ni guardes números de tarjeta/CVV en este sitio.
+7. Los pedidos y confirmaciones son demostrativos y no se envían a un servidor ni llegan automáticamente al negocio. Para pedidos reales se necesita backend o una plataforma de gestión.
+8. La ubicación permite elegir departamento, municipio y zona/sector (incluida Zona 0 como referencia local cuando aplica).
+
+ACTUALIZACIÓN: el formulario Carrito y confirmación se trasladó del catálogo a carrito.html. Contacto prepara/copia el mensaje sin abrir WhatsApp; no realiza envío real sin API Business y servidor.

@@ -1,0 +1,1 @@
+Los 10 productos aparecen juntos al abrir el catálogo. La lista Tipo de flor filtra las tarjetas sin encabezados ni secciones. El orden por precio también funciona sobre toda la cuadrícula.

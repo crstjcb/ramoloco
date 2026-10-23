@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Ramo Loco | Floristería
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <a class="brand" href="index.html">
+    <img alt="Logo Ramo Loco" class="brand-logo" loading="lazy" src="logo-ramo-loco.png"/>
+   <span>
+     Ramo
+     <b>
+      Loco
+     </b>
+     <small>
+      FLORES CON AMOR · GUATEMALA
+     </small>
+    </span>
+   </a>
+   <button aria-label="Abrir menú" class="menu-toggle" onclick="toggleMenu()">
+    ☰
+   </button>
+   <nav class="nav" id="nav">
+    <a href="index.html">
+     Inicio
+    </a>
+     <a class="active" href="envios.html">
+     Envíos
+    </a>
+    <a href="catalogo.html">
+     Catálogo
+    </a>
+    <a href="carrito.html">
+     Carrito
+     <span class="cart-nav-count" id="cartNavCount">
+      0
+     </span>
+    </a>
+   
+    <a href="nosotros.html">
+     Nosotros
+    </a>
+    <a href="contacto.html">
+     Contacto
+    </a>
+    <a class="nav-cta" href="carrito.html">
+     Ver carrito ↗
+    </a>
+   </nav>
+  </header>
+  <main>
+   <section class="page-hero">
+    <span class="eyebrow">
+     PEDIR ES SENCILLO
+    </span>
+    <h1>
+     Tu detalle, en buenas
+     <em>
+      manos.
+     </em>
+    </h1>
+    <p>
+     Coordinamos cada pedido contigo para que las flores lleguen en el momento y lugar acordados.
+    </p>
+    <div class="breadcrumbs">
+     <a href="index.html">
+      Inicio
+     </a>
+     / Envíos
+    </div>
+   </section>
+   <section class="section-wrap shipping-layout">
+    <div class="shipping-main">
+     <span class="eyebrow">
+      CÓMO FUNCIONA
+     </span>
+     <h2>
+      De nuestra floristería
+      <br/>
+      a alguien especial.
+     </h2>
+     <div class="steps">
+      <article>
+       <span>
+        01
+       </span>
+       <div>
+        <h3>
+         Elige tu arreglo
+        </h3>
+        <p>
+         Explora el catálogo o cuéntanos qué flores, colores y estilo tienes en mente.
+        </p>
+       </div>
+      </article>
+      <article>
+       <span>
+        02
+       </span>
+       <div>
+        <h3>
+         Confirma los detalles
+        </h3>
+        <p>
+         Revisamos disponibilidad, dirección, fecha, horario y costo de entrega antes de confirmar.
+        </p>
+       </div>
+      </article>
+      <article>
+       <span>
+        03
+       </span>
+       <div>
+        <h3>
+         Personaliza tu mensaje
+        </h3>
+        <p>
+         Podemos incluir una tarjeta con tu dedicatoria para que el regalo sea más personal.
+        </p>
+       </div>
+      </article>
+      <article>
+       <span>
+        04
+       </span>
+       <div>
+        <h3>
+         Coordina la entrega
+        </h3>
+        <p>
+         Te compartimos las indicaciones de pago y confirmamos contigo el pedido.
+        </p>
+       </div>
+      </article>
+     </div>
+    </div>
+    <aside class="shipping-card">
+     <div class="shipping-icon">
+      ✿
+     </div>
+     <h3>
+      Información de entrega
+     </h3>
+     <p>
+      Las entregas se coordinan según zona, fecha y disponibilidad.
+     </p>
+     <ul>
+      <li>
+       Consulta cobertura para tu dirección.
+      </li>
+      <li>
+       El costo se confirma antes de realizar el pedido.
+      </li>
+      <li>
+       Pedidos especiales requieren anticipación.
+      </li>
+      <li>
+       Las flores pueden variar por temporada.
+      </li>
+     </ul>
+     <a class="btn btn-primary btn-full" href="contacto.html">
+      Consultar mi entrega →
+     </a>
+    </aside>
+   </section>
+   <section class="faq section-wrap">
+    <span class="eyebrow">
+     PREGUNTAS FRECUENTES
+    </span>
+    <h2>
+     Antes de hacer tu pedido
+    </h2>
+    <details>
+     <summary>
+      ¿Con cuánto tiempo debo pedir?
+     </summary>
+     <p>
+      Para arreglos personalizados recomendamos consultar con anticipación. La disponibilidad puede cambiar según la fecha.
+     </p>
+    </details>
+    <details>
+     <summary>
+      ¿Puedo solicitar un color específico?
+     </summary>
+     <p>
+      Sí. Cuéntanos tu paleta de colores y haremos lo posible por adaptarla a las flores disponibles.
+     </p>
+    </details>
+    <details>
+     <summary>
+      ¿Cómo sé el costo de envío?
+     </summary>
+     <p>
+      Compártenos la zona o dirección de entrega y te confirmaremos el costo antes de que aceptes el pedido.
+     </p>
+    </details>
+    <details>
+     <summary>
+      ¿Puedo incluir una dedicatoria?
+     </summary>
+     <p>
+      Claro. Envíanos el texto que deseas incluir y confirmaremos las opciones de tarjeta disponibles.
+     </p>
+    </details>
+   </section>
+  
+<section class="how-it-works" aria-labelledby="how-title">
+  <div class="section-wrap">
+    <div class="how-heading">
+      <div><span class="eyebrow">PEDIR FLORES ES FÁCIL</span><h2 id="how-title">Cómo <em>funciona</em></h2></div>
+      <p>De elegir tu ramo a coordinar la entrega, te acompañamos en cada detalle.</p>
+    </div>
+    <div class="how-grid">
+      <article class="how-card how-steps">
+        <span class="how-card-icon" aria-hidden="true">✿</span>
+        <h3>Tu pedido, paso a paso</h3>
+        <ol class="how-step-list">
+          <li><span>01</span><p>Elige tu ramo favorito de nuestro <a href="catalogo.html">catálogo</a>.</p></li>
+          <li><span>02</span><p>Escríbenos para confirmar disponibilidad y personalizar tu pedido.</p></li>
+          <li><span>03</span><p>Reserva con un <strong>50 % de anticipo</strong>.</p></li>
+          <li><span>04</span><p>Confirma la entrega y los últimos detalles.</p></li>
+        </ol>
+      </article>
+      <article class="how-card">
+        <span class="how-card-icon" aria-hidden="true">↗</span>
+        <h3>Envíos a Guatemala</h3>
+        <p>Coordinamos entregas a toda Guatemala, con tarifas <strong>desde Q25</strong>.</p>
+        <p class="how-card-muted">El costo final depende de la ubicación de entrega.</p>
+        <a class="how-card-link" href="envios.html">Consultar entregas <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="how-card">
+        <span class="how-card-icon" aria-hidden="true">♡</span>
+        <h3>Detalles que enamoran</h3>
+        <div class="how-extra"><strong>Carta especial <span>+ Q5</span></strong><p>Escribe tu mensaje y lo incluimos en una tarjeta.</p></div>
+        <div class="how-extra"><strong>Papel de color <span>+ Q10</span></strong><p>Personaliza tu ramo con un color específico de papel.</p></div>
+      </article>
+    </div>
+    <p class="how-footnote">Precios adicionales sujetos a confirmación al realizar tu pedido.</p>
+  </div>
+</section>
+
+</main>
+  <footer class="footer">
+   <div class="footer-main">
+    <a class="brand brand-footer" href="index.html">
+     <img alt="Logo Ramo Loco" class="brand-logo" loading="lazy" src="logo-ramo-loco.png"/>
+    <span>
+     Ramo
+     <b>
+      Loco
+     </b>
+     <small>
+      FLORES CON AMOR · GUATEMALA
+     </small>
+    </span>
+    </a>
+    <p>
+     Flores que expresan lo que las palabras no siempre pueden.
+    </p>
+    <div class="footer-links">
+     <a href="catalogo.html">
+      Catálogo
+     </a>
+     
+     <a href="envios.html">
+      Envíos
+     </a>
+     <a href="nosotros.html">
+      Nosotros
+     </a>
+     <a href="contacto.html">
+      Contacto
+     </a>
+     <a href="https://www.instagram.com/ramo_locoo/" rel="noopener noreferrer" target="_blank">
+      Instagram @ramo_locoo ↗
+     </a>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <span>
+     © 2026 Ramo Loco. Todos los derechos reservados.
+    </span>
+    <span>
+     Hecho con cuidado en Guatemala ♡
+    </span>
+   </div>
+  </footer>
+ <a class="whatsapp-float"
+   href="https://www.instagram.com/ramo_locoo/"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Visitar Instagram de Ramo Loco">
+
+  <svg xmlns="http://www.w3.org/2000/svg"
+       width="26"
+       height="26"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+
+    <rect x="2" y="2" width="20" height="20" rx="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+
+  </svg>
+</a>
+  <script src="main.js">
+  </script>
+ </body>
+</html>
+

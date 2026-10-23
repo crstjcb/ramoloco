@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Carrito | Ramo Loco
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <a class="brand" href="index.html">
+    <img alt="Logo Ramo Loco" class="brand-logo" loading="lazy" src="logo-ramo-loco.png"/>
+    <span>
+     Ramo
+     <b>
+      Loco
+     </b>
+     <small>
+      FLORES CON AMOR · GUATEMALA
+     </small>
+    </span>
+   </a>
+   <button aria-label="Abrir menú" class="menu-toggle" onclick="toggleMenu()">
+    ☰
+   </button>
+   <nav class="nav" id="nav">
+    <a href="index.html">
+     Inicio
+    </a>
+    <a href="envios.html">
+     Envíos
+    </a>
+    <a href="catalogo.html">
+     Catálogo
+    </a>
+    <a class="active" href="carrito.html">
+     Carrito
+     <span class="cart-nav-count" id="cartNavCount">
+      0
+     </span>
+    </a>
+    <a href="nosotros.html">
+     Nosotros
+    </a>
+    <a href="contacto.html">
+     Contacto
+    </a>
+    <a class="nav-cta" href="https://www.instagram.com/ramo_locoo/" rel="noopener noreferrer" target="_blank">
+     @ramo_locoo ↗
+    </a>
+   </nav>
+  </header>
+  <main>
+   <section class="page-hero">
+    <span class="eyebrow">
+     TU PEDIDO
+    </span>
+    <h1>
+     Carrito y
+     <em>
+      confirmación.
+     </em>
+    </h1>
+    <p>
+     Revisa tus flores, elige dónde entregarlas y confirma tu solicitud.
+    </p>
+    <div class="breadcrumbs">
+     <a href="index.html">
+      Inicio
+     </a>
+     / Carrito
+    </div>
+   </section>
+   <section class="checkout-area section-wrap" id="checkout">
+    <div class="checkout-heading">
+     <span class="eyebrow">
+      TU PEDIDO
+     </span>
+     <h2>
+      Carrito y confirmación
+     </h2>
+     <p>
+      Revisa tus arreglos, completa los datos de entrega y confirma tu pedido.
+     </p>
+    </div>
+    <div class="checkout-layout">
+     <section class="cart-panel">
+      <div class="panel-title">
+       <h3>
+        Tu carrito
+       </h3>
+       <span id="cartCount">
+        0 artículos
+       </span>
+      </div>
+      <div class="cart-items" id="cartItems">
+       <p class="empty-cart">
+        Tu carrito está vacío. Agrega un arreglo del catálogo.
+       </p>
+      </div>
+      <div class="cart-total">
+       <span>
+        Total estimado
+       </span>
+       <strong id="cartTotal">
+        Q 0
+       </strong>
+      </div>
+     </section>
+     <form class="order-form" id="orderForm" onsubmit="confirmOrder(event)">
+      <h3>
+       Datos de entrega
+      </h3>
+      <div class="form-grid">
+       <div class="field">
+        <label for="buyerName">
+         Nombre completo *
+        </label>
+        <input id="buyerName" placeholder="Nombre y apellido" required=""/>
+       </div>
+       <div class="field">
+        <label for="buyerPhone">
+         Teléfono *
+        </label>
+        <input id="buyerPhone" placeholder="Ej. 5555-5555" required="" type="tel"/>
+       </div>
+       <div class="field">
+        <label for="department">
+         Departamento *
+        </label>
+        <select id="department" onchange="updateMunicipalities()" required="">
+         <option value="">
+          Selecciona departamento
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label for="municipality">
+         Municipio *
+        </label>
+        <select id="municipality" onchange="updateZones()" required="">
+         <option value="">
+          Primero elige departamento
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label for="address">
+         Dirección detallada *
+        </label>
+        <input id="address" placeholder="Colonia, calle, avenida, casa..." required=""/>
+       </div>
+       <div class="field full">
+        <label for="deliveryDate">
+         Fecha deseada de entrega
+        </label>
+        <input id="deliveryDate" type="date"/>
+       </div>
+      </div>
+      <section aria-label="Personalización del ramo" class="extras-section">
+       <h3>
+        Personaliza tu regalo
+       </h3>
+       <p class="extras-description">
+        Agrega una dedicatoria o elige un color de papel para tu ramo.
+       </p>
+       <label class="extra-toggle">
+        <input id="addLetter" onchange="toggleExtras()" type="checkbox"/>
+        <span>
+         <b>
+          💌 Carta especial
+         </b>
+         <small>
+          Agregar dedicatoria por Q5
+         </small>
+        </span>
+       </label>
+       <div class="extra-detail" hidden="" id="letterOptions">
+        <label for="letterMessage">
+         Escribe tu carta especial
+        </label>
+        <textarea disabled="" id="letterMessage" maxlength="600" placeholder="Escribe aquí el mensaje que acompañará tus flores..." rows="4"></textarea>
+        <small>
+         Máximo 600 caracteres.
+        </small>
+       </div>
+       <label class="extra-toggle">
+        <input id="addPaper" onchange="toggleExtras()" type="checkbox"/>
+        <span>
+         <b>
+          🎀 Papel de color
+         </b>
+         <small>
+          Elegir un color especial por Q10
+         </small>
+        </span>
+       </label>
+       <div class="extra-detail" hidden="" id="paperOptions">
+        <label for="paperColor">
+         Color del papel
+        </label>
+        <select disabled="" id="paperColor">
+         <option value="">
+          Selecciona un color
+         </option>
+         <option>
+          Rosa pastel
+         </option>
+         <option>
+          Rosa fuerte
+         </option>
+         <option>
+          Rojo
+         </option>
+         <option>
+          Blanco
+         </option>
+         <option>
+          Negro
+         </option>
+         <option>
+          Crema
+         </option>
+         <option>
+          Lila
+         </option>
+         <option>
+          Celeste
+         </option>
+         <option>
+          Verde
+         </option>
+         <option>
+          Amarillo
+         </option>
+         <option>
+          Otro (indicar en notas)
+         </option>
+        </select>
+       </div>
+      </section>
+      <h3 class="payment-title">
+       Forma de pago
+      </h3>
+      <div class="payment-options">
+       <label class="payment-choice">
+        <input checked="" name="payment" onchange="toggleCardFields()" type="radio" value="Efectivo contra entrega"/>
+        <span>
+         <b>
+          💵 Efectivo
+         </b>
+         <small>
+          Pago en efectivo al recibir, sujeto a confirmación.
+         </small>
+        </span>
+       </label>
+       <label class="payment-choice">
+        <input name="payment" onchange="toggleCardFields()" type="radio" value="Tarjeta (demo)"/>
+        <span>
+         <b>
+          💳 Tarjeta
+         </b>
+         <small>
+          Vista de demostración; no procesa pagos reales.
+         </small>
+        </span>
+       </label>
+       <label class="payment-choice">
+        <input name="payment" onchange="toggleCardFields()" type="radio" value="Efectivo anticipado (pedido sorpresa)"/>
+        <span>
+         <b>
+          🎁 Efectivo antes de la entrega
+         </b>
+         <small>
+          Para regalos sorpresa: coordina el pago en efectivo antes de enviar el ramo.
+         </small>
+        </span>
+       </label>
+      </div>
+      <div class="card-demo" hidden="" id="cardFields">
+       <div class="demo-warning">
+        Modo demostración: no ingreses datos reales de tu tarjeta. Para cobrar de verdad se debe integrar una pasarela de pago segura.
+       </div>
+       <div class="visual-card">
+        <span>
+         FLORA SERENA
+        </span>
+        <span class="chip">
+         ▦
+        </span>
+        <strong id="cardPreviewNumber">
+         •••• •••• •••• ••••
+        </strong>
+        <div>
+         <span id="cardPreviewName">
+          NOMBRE DEL TITULAR
+         </span>
+         <span id="cardPreviewExpiry">
+          MM/AA
+         </span>
+        </div>
+       </div>
+       <div class="form-grid">
+        <div class="field full">
+         <label for="cardName">
+          Nombre del titular (demo)
+         </label>
+         <input autocomplete="off" id="cardName" oninput="updateCardPreview()" placeholder="NOMBRE DEL TITULAR"/>
+        </div>
+        <div class="field full">
+         <label for="cardNumber">
+          Número de tarjeta (demo)
+         </label>
+         <input autocomplete="off" id="cardNumber" inputmode="numeric" maxlength="19" oninput="formatCardNumber()" placeholder="0000 0000 0000 0000"/>
+        </div>
+        <div class="field">
+         <label for="cardExpiry">
+          Vencimiento (demo)
+         </label>
+         <input autocomplete="off" id="cardExpiry" maxlength="5" oninput="formatExpiry();updateCardPreview()" placeholder="MM/AA"/>
+        </div>
+        <div class="field">
+         <label for="cardCvv">
+          CVV (demo)
+         </label>
+         <input autocomplete="off" id="cardCvv" inputmode="numeric" maxlength="4" placeholder="123"/>
+        </div>
+       </div>
+      </div>
+      <div class="field">
+       <label for="orderNotes">
+        Notas para el pedido
+       </label>
+       <textarea id="orderNotes" placeholder="Dedicatoria, referencias para llegar u otra indicación..." rows="3"></textarea>
+      </div>
+      <button class="btn btn-primary btn-full confirm-btn" type="submit">
+       Confirmar pedido
+       <span>
+        →
+       </span>
+      </button>
+      <p class="form-note">
+       Al confirmar, verás un resumen en esta página. No se enviará nada a WhatsApp ni se realizará ningún cobro.
+      </p>
+     </form>
+    </div>
+    <div aria-live="polite" class="confirmation-panel" hidden="" id="confirmation" role="status">
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="footer-main">
+    <a class="brand brand-footer" href="index.html">
+     <img alt="Logo Ramo Loco" class="brand-logo" loading="lazy" src="logo-ramo-loco.png"/>
+     <span>
+      Ramo
+      <b>
+       Loco
+      </b>
+      <small>
+       FLORES CON AMOR · GUATEMALA
+      </small>
+     </span>
+    </a>
+    <p>
+     Instagram:
+     <a href="https://www.instagram.com/ramo_locoo/" rel="noopener noreferrer" target="_blank">
+      @ramo_locoo
+     </a>
+    </p>
+    <p>
+     🕗 Lunes a sábado, 8:00 am a 10:00 pm
+    </p>
+   </div>
+   <div class="footer-bottom">
+    <span>
+     © 2026 Ramo Loco · Guatemala
+    </span>
+   </div>
+  </footer>
+  <script src="main.js">
+  </script>
+ </body>
+</html>

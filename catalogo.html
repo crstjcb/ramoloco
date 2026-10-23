@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Ramo Loco | Floristería
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="css/styles.css" rel="stylesheet"/>
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <a class="brand" href="index.html">
+    <img alt="Logo Ramo Loco" class="brand-logo" loading="lazy" src="logo-ramo-loco.png"/>
+    <span>
+     Ramo
+     <b>
+      Loco
+     </b>
+     <small>
+      FLORES CON AMOR · GUATEMALA
+     </small>
+    </span>
+   </a>
+   <button aria-label="Abrir menú" class="menu-toggle" onclick="toggleMenu()">
+    ☰
+   </button>
+   <nav class="nav" id="nav">
+    <a href="index.html">
+     Inicio
+    </a>
+    <a href="envios.html">
+     Envíos
+    </a>
+    <a class="active" href="catalogo.html">
+     Catálogo
+    </a>
+    
+    <a href="carrito.html">
+     Carrito
+     <span class="cart-nav-count" id="cartNavCount">
+      0
+     </span>
+    </a>
+    <a href="nosotros.html">
+     Nosotros
+    </a>
+    <a href="contacto.html">
+     Contacto
+    </a>
+    <a class="nav-cta" href="carrito.html">
+     Ver carrito ↗
+    </a>
+   </nav>
+  </header>
+  <main>
+   <section class="page-hero">
+    <span class="eyebrow">
+     NUESTRA COLECCIÓN
+    </span>
+    <h1>
+     Un ramo para cada
+     <em>
+      sentimiento.
+     </em>
+    </h1>
+    <p>
+     Explora los arreglos, amplía sus fotografías y agrega tus favoritos al carrito. Completa el pedido desde la pestaña Carrito.
+    </p>
+    <div class="breadcrumbs">
+     <a href="index.html">
+      Inicio
+     </a>
+     / Catálogo
+    </div>
+   </section>
+   <section class="catalog-section section-wrap">
+    <div class="catalog-tools">
+     <label>
+      Tipo de flor
+      <select aria-label="Filtrar por tipo de flor" id="flowerFilter" onchange="filterFlowers()">
+       <option value="all">
+        Todas las flores
+       </option>
+       <option value="rosas">
+        Rosas
+       </option>
+       <option value="lirios">
+        Lirios
+       </option>
+       <option value="gerberas">
+        Gerberas
+       </option>
+       <option value="girasoles">
+        Girasoles
+       </option>
+       <option value="crisantemos">
+        Crisantemos
+       </option>
+       <option value="astromelias">
+        Astromelias
+       </option>
+      </select>
+     </label>
+     <span>
+      Selección floral
+      <b id="visibleCount">
+       · 10 diseños
+      </b>
+     </span>
+     <label>
+      Ordenar por
+      <select id="sortSelect" onchange="sortProducts()">
+       <option value="default">
+        Recomendados
+       </option>
+       <option value="low">
+        Precio: menor a mayor
+       </option>
+       <option value="high">
+        Precio: mayor a menor
+       </option>
+      </select>
+     </label>
+    </div>
+    <div class="product-grid catalog-grid" id="catalogGrid">
+     <article class="product-card" data-category="rosas" data-id="rosas" data-name="Ramo de Rosas 1" data-price="70">
+      <button aria-label="Ampliar Ramo de Rosas 1" class="product-image image-open" onclick="openImage(this)" type="button">
+       <img alt="Ramo de Rosas 1" loading="lazy" src="ramo-01.jpg"/>
+       <span class="zoom-hint">
+        ⌕ Ver imagen
+       </span>
+      </button>
+      <div class="product-info">
+       <div>
+        <h3>
+         Ramo de Rosas 1
+        </h3>
+        <p>
+         1/2 docena, nubecitas, papel a elección.
+        </p>
+       </div>
+       <strong>
+        Q 70
+       </strong>
+      </div>
+      <button class="product-order add-cart" onclick="addToCart('rosas')" type="button">
+       Agregar al carrito +
+      </button>
+     </article>
+     <article class="product-card" data-category="rosas" data-id="silvestre" data-name="Ramo de 24 rosas y astromelias" data-price="240">
+      <button aria-label="Ampliar Ramo de 24 rosas y astromelias" class="product-image image-open" onclick="openImage(this)" type="button">
+       <img alt="Ramo de 24 rosas y astromelias" loading="lazy" src="ramo-02.jpg"/>
+       <span class="zoom-hint">
+        ⌕ Ver imagen
+       </span>
+      </button>
+      <div class="product-info">
+       <div>
+        <h3>
+         Ramo de 24 rosas y astromelias
+        </h3>
+        <p>
+         24 rosas, nubecitas, papel a elección.
+        </p>
+       </div>
+       <strong>
+        Q 240
+       </strong>
+      </div>
+      <button class="product-order add-cart" onclick="addToCart('silvestre')" type="button">
+       Agregar al carrito +
+      </button>
+     </article>
+     <article class="product-card" data-category="lirios" data-id="alegria" data-name="Ramo 1: Lirios rosados" data-price="160">
+      <button aria-label="Ampliar Ramo 1: Lirios rosados" class="product-image image-open" onclick="openImage(this)" type="button">
+       <img alt="Ramo 1: Lirios rosados" loading="lazy" src="ramo-03.jpg"/>
+       <span class="zoom-hint">
+        ⌕ Ver imagen
+       </span>
+      </button>
+      <div class="product-info">
+       <div>
+        <h3>
+         Ramo 1: Lirios rosados
+        </h3>
+        <p>
+         5 lirios + astromelias + papel especial.
+        </p>
+       </div>
+       <strong>
+        Q 160
+       </strong>
+      </div>
+      <button class="product-order add-cart" onclick="addToCart('alegria')" type="button">
+       Agregar al carrito +
+      </button>
+     </article>
+     <article class="product-card" data-category="lirios" data-id="blanco" data-name="Ramo 2: Lirios y astromelias" data-price="230">
+      <button aria-label="Ampliar Ramo 2: Lirios y astromelias" class="product-image image-open" onclick="openImage(this)" type="button">
+       <img alt="Ramo 2: Lirios y astromelias" loading="lazy" src="ramo-04.jpg"/>
+       <span class="zoom-hint">
+        ⌕ Ver imagen
+       </span>
+      </button>
+      <div class="product-info">
+       <div>
+        <h3>
+         Ramo 2: Lirios y astromelias
+        </h3>
+        <p>
+         9-10 lirios astromelias + papel especial.
+        </p>
+       </div>
+       <strong>
+        Q 230
+       </strong>
+      </div>
+      <button class="product-order add-cart" onclick="addToCart('blanco')" type="button">
+       Agregar al carrito +
+      </button>
+     </article>
+     <article class="product-card" data-category="gerberas" data-id="jardin" data-name="Ramo 1: Gerberas de colores" data-price="80">
+      <button aria-label="Ampliar Ramo 1: Gerberas de colores" class="product-image image-open" onclick="openImage(this)" type="button">
+       <img alt="Ramo 1: Gerberas de colores" loading="lazy" src="ramo-05.jpg"/>
+       <span class="zoom-hint">
+        ⌕ Ver imagen
+       </span>
+      </button>
+      <div class="product-info">
+       <div>
+        <h3>
+         Ramo 1: Gerberas de colores
+        </h3>
+        <p>
+         6 gerberas + papel especial.
+        </p>
+       </div>
+       <strong>
+        Q 80
+       </strong>
+      </div>
+      <button class="product-order add-cart" onclick="addToCart('jardin')" type="button">
+       Agregar al carrito +
+      </button>
+     </article>
+     <article class="product-card" data-category="gerberas" data-id="momentos" data-name="Ramo 2: Gerberas rosadas" data-price="120">
+      <button aria-label="Ampliar Ramo 2: Gerberas rosadas" class="product-image image-open" onclick="openImage(this)" type="button">
+       <img alt="Ramo 2: Gerberas rosadas" loading="lazy" src="ramo-06.jpg"/>
+       <span class="zoom-hint">
+        ⌕ Ver imagen
+       </span>
+      </button>
+      <div class="product-info">
+       <div>
+        <h3>
+         Ramo 2: Gerberas rosadas
+        </h3>
+        <p>
+         12 gerberas nubecitas + papel especial.
+        </p>
+       </div>
+       <strong>
+        Q 120
+       </strong>
+      </div>
+      <button class="product-order add-cart" onclick="addToCart('momentos')" type="button">
+       Agregar al carrito +
+      </button>
+     </article>
+     <article class="product-card" data-category="girasoles" data-id="foto07" data-name="Ramo 1: Girasol con nubecitas" data-price="55">
+      <button aria-label="Ampliar Ramo 1: Girasol con nubecitas" class="product-image image-open" onclick="openImage(this)" type="button">
+       <img alt="Ramo 1: Girasol con nubecitas" loading="lazy" src="ramo-07.jpg"/>
+       <span class="zoom-hint">
+        ⌕ Ver imagen
+       </span>
+      </button>
+      <div class="product-info">
+       <div>
+        <h3>
+         Ramo 1: Girasol con nubecitas
+        </h3>
+        <p>
+         girasol + nubecitas + papel especial.
+        </p>
+       </div>
+       <strong>
+        Q 55
+       </strong>
+      </div>
+      <button class="product-order add-cart" onclick="addToCart('foto07')" type="button">
+       Agregar al carrito +
+      </button>
+     </article>
+     <article class="product-card" data-category="girasoles" data-id="foto08" data-name="Ramo 2: Girasoles y gerberas" data-price="150">
+      <button aria-label="Ampliar Ramo 2: Girasoles y gerberas" class="product-image image-open" onclick="openImage(this)" type="button">
+       <img alt="Ramo 2: Girasoles y gerberas" loading="lazy" src="ramo-08.jpg"/>
+       <span class="zoom-hint">
+        ⌕ Ver imagen
+       </span>
+      </button>
+      <div class="product-info">
+       <div>
+        <h3>
+         Ramo 2: Girasoles y gerberas
+        </h3>
+        <p>
+         3 girasoles + nubecitas + papel especial
+        </p>
+       </div>
+       <strong>
+        Q 150
+       </strong>
+      </div>
+      <button class="product-order add-cart" onclick="addToCart('foto08')" type="button">
+       Agregar al carrito +
+      </button>
+     </article>
+     <article class="product-card" data-category="crisantemos" data-id="foto09" data-name="Ramo de gatitos" data-price="75">
+      <button aria-label="Ampliar Ramo de gatitos" class="product-image image-open" onclick="openImage(this)" type="button">
+       <img alt="Ramo de gatitos" loading="lazy" src="ramo-09.jpg"/>
+       <span class="zoom-hint">
+        ⌕ Ver imagen
+       </span>
+      </button>
+      <div class="product-info">
+       <div>
+        <h3>
+         Ramo de gatitos
+        </h3>
+        <p>
+         3 crisantemos + nubecitas + papel especial.
+        </p>
+       </div>
+       <strong>
+        Q 75
+       </strong>
+      </div>
+      <button class="product-order add-cart" onclick="addToCart('foto09')" type="button">
+       Agregar al carrito +
+      </button>
+     </article>
+     <article class="product-card" data-category="astromelias" data-id="foto10" data-name="Ramo 1: Astromelias rosadas" data-price="60">
+      <button aria-label="Ampliar Ramo 1: Astromelias rosadas" class="product-image image-open" onclick="openImage(this)" type="button">
+       <img alt="Ramo 1: Astromelias rosadas" loading="lazy" src="ramo-10.jpg"/>
+       <span class="zoom-hint">
+        ⌕ Ver imagen
+       </span>
+      </button>
+      <div class="product-info">
+       <div>
+        <h3>
+         Ramo 1: Astromelias rosadas
+        </h3>
+        <p>
+         Manojo de astromelias + papel especial.
+        </p>
+       </div>
+       <strong>
+        Q 60
+       </strong>
+      </div>
+      <button class="product-order add-cart" onclick="addToCart('foto10')" type="button">
+       Agregar al carrito +
+      </button>
+     </article>
+    </div>
+    <p class="notice">
+     Los precios y las flores pueden variar según temporada y disponibilidad.
+    </p>
+   </section>
+   <div aria-label="Vista ampliada de producto" aria-modal="true" class="image-modal" hidden="" id="imageModal" onclick="closeImage(event)" role="dialog">
+    <button aria-label="Cerrar imagen" class="modal-close" onclick="closeImage(event)">
+     ×
+    </button>
+    <button aria-label="Imagen anterior" class="modal-prev" onclick="changeImage(-1,event)">
+     ‹
+    </button>
+    <img alt="" id="modalImage" loading="lazy" src=""/>
+    <button aria-label="Imagen siguiente" class="modal-next" onclick="changeImage(1,event)">
+     ›
+    </button>
+    <div class="modal-caption" id="modalCaption">
+    </div>
+   </div>
+  </main>
+  <footer class="footer">
+   <div class="footer-main">
+    <a class="brand brand-footer" href="index.html">
+     <img alt="Logo Ramo Loco" class="brand-logo" loading="lazy" src="logo-ramo-loco.png"/>
+     <span>
+      Ramo
+      <b>
+       Loco
+      </b>
+      <small>
+       FLORES CON AMOR · GUATEMALA
+      </small>
+     </span>
+    </a>
+    <p>
+     Flores que expresan lo que las palabras no siempre pueden.
+    </p>
+    <div class="footer-links">
+     <a href="catalogo.html">
+      Catálogo
+     </a>
+     <a href="envios.html">
+      Envíos
+     </a>
+     <a href="nosotros.html">
+      Nosotros
+     </a>
+     <a href="contacto.html">
+      Contacto
+     </a>
+     <a href="https://www.instagram.com/ramo_locoo/" rel="noopener noreferrer" target="_blank">
+      Instagram @ramo_locoo ↗
+     </a>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <span>
+     © 2026 Ramo Loco. Todos los derechos reservados.
+    </span>
+    <span>
+     Hecho con cuidado en Guatemala ♡
+    </span>
+   </div>
+  </footer>
+  <a aria-label="Visitar Instagram de Ramo Loco" class="whatsapp-float" href="https://www.instagram.com/ramo_locoo/" rel="noopener noreferrer" target="_blank">
+   <svg fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+    <rect height="20" rx="5" width="20" x="2" y="2">
+    </rect>
+    <circle cx="12" cy="12" r="4">
+    </circle>
+    <circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none">
+    </circle>
+   </svg>
+  </a>
+  <script src="main.js">
+  </script>
+ </body>
+</html>
